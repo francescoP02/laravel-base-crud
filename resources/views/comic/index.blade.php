@@ -2,18 +2,18 @@
 
 @section('main_content')
 
-<div class="container">
+<div class="container text-center">
 
     <h3>Lista dei fumetti:</h3>
     <ul>
     @foreach ($comics_list as $comic)
         <li>
-            <h4> {{ $comic->title }} </h4>
+            <a href="{{ route('comics.show', ['comic' => $comic->id]) }}"> <h4> {{ $comic->title }} </h4> </a>
             <p> {{$comic->description}}</p>
-            <p>{{ $comic->series }}</p>
-            <p>{{ $comic->type }}</p>
-            <span>{{$comic->price}}</span>
-            <img src="{{$comic->thumb}}" alt="">
+            <p>Serie: {{ $comic->series }}</p>
+            <p>Tipologia: {{ $comic->type }}</p>
+            <p>Prezzo: {{$comic->price}} €</p>
+            <img src="{{$comic->thumb}}" alt="{{ $comic->series }}">
         </li>
     @endforeach
     </ul>

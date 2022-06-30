@@ -12149,3 +12149,15 @@ fieldset:disabled .btn {
   }
 }
 
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  list-style: none;
+}
+
