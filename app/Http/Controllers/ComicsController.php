@@ -108,17 +108,19 @@ class ComicsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 
     private function getValidationRules() {
         return [
-            'title' => 'required|max:100|min:5',
+            'title' => 'required|max:150|min:5',
             'description' => 'required',
             'thumb' => 'required',
             'price' => 'required|max:50',
-            'series' => 'required',
-            'sale_date' => 'required',
+            'series' => 'required|max:150',
+            'sale_date' => 'required|max:50',
             'type' => 'required',
         ];
     }

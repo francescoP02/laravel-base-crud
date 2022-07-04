@@ -16,5 +16,11 @@
     </ul>
 
     <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modifica</a>
+
+    <form action="{{ route('comics.destroy', [ 'comic' => $selected_comic->id ]) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">Cancella</button>
+    </form>
 </div>
 @endsection
