@@ -14,5 +14,7 @@
             <p>Disponibile dal: {{ $selected_comic->sale_date }}</p>
         </li>
     </ul>
+
+    <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modifica</a>
 </div>
 @endsection
