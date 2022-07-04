@@ -2,7 +2,7 @@
 						
 @section('main_content')
 <div class="container text-center">
-    <h3>Dettagli del fumetto</h3>
+    <h3>Comic's details:</h3>
     <ul>
         <li>
             <h3>{{ $selected_comic->title }}</h3>
@@ -15,12 +15,12 @@
         </li>
     </ul>
 
-    <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modifica</a>
+    <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Modify</a>
 
     <form action="{{ route('comics.destroy', [ 'comic' => $selected_comic->id ]) }}" method="POST">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger">Cancella</button>
+        <button type="submit" class="btn btn-danger" onClick="return confirm('Confirm delete');">Delete</button>
     </form>
 </div>
 @endsection

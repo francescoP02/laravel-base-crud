@@ -37,7 +37,7 @@
         <div class="row mb-3">
             <label for="price" class="col-sm-2 col-form-label">Prezzo:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" name="price" value="{{ old('price') }}">
+              <input type="decimal" class="form-control" name="price" value="{{ old('price') }}">
             </div>
         </div>
         <div class="row mb-3">
